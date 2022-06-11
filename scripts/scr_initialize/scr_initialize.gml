@@ -45,9 +45,10 @@
 	
 	//title
 	#macro TITLE_MENU_CHOICES 3
-	#macro TITLE_MODE_START 0
-	#macro TITLE_MODE_MENU 1
-	#macro TITLE_MODE_OPTIONS 2
+	#macro TITLE_MODE_START_FADEIN 0
+	#macro TITLE_MODE_START_READY 1
+	#macro TITLE_MODE_MENU_FADEIN 2
+	#macro TITLE_MODE_MENU_READY 3
 	
 	//dialogue
 	#macro TEXT_LOADING -1

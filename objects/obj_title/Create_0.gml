@@ -1,4 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+title_mode = TITLE_MODE_START_FADEIN;
 
-title_mode = TITLE_MODE_
+title_switch_timer = 100;
+
+menu_position = 1;
+
+

@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"fn_cursive","path":"fonts/fn_cursive/fn_cursive.yy",},"order":18,},
     {"id":{"name":"scr_dialogue_start","path":"scripts/scr_dialogue_start/scr_dialogue_start.yy",},"order":7,},
     {"id":{"name":"obj_disclaimer","path":"objects/obj_disclaimer/obj_disclaimer.yy",},"order":14,},
     {"id":{"name":"fn_textlarge","path":"fonts/fn_textlarge/fn_textlarge.yy",},"order":15,},
