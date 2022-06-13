@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "sunflowers-in-the-rain",
-    "path": "sunflowers-in-the-rain.yyp",
+    "name": "UI",
+    "path": "folders/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_title",

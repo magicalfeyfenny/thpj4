@@ -7,7 +7,7 @@ if (title_switch_timer <= 0 && title_mode == TITLE_MODE_START_FADEIN ) {
 if ( title_mode == TITLE_MODE_START_READY ) {
 	var input = scr_input_get(INPUT_ANY);
 	if (input) {
-		title_switch_timer = 100;
+		title_switch_timer = 50;
 		title_mode = TITLE_MODE_MENU_FADEIN;
 	}
 }
@@ -17,35 +17,49 @@ if (title_switch_timer <= 0 && title_mode == TITLE_MODE_MENU_FADEIN ) {
 }
 
 if (title_mode == TITLE_MODE_MENU_READY ) {
+	menu_wait--;
 	var input_up = scr_input_get( INPUT_UP );
 	var input_down = scr_input_get( INPUT_DOWN );
 	var input_select = ( scr_input_get( INPUT_SHOT_LEFT ) || scr_input_get(INPUT_SHOT_RIGHT) );
-	var input_exit = scr_input_get( INPUT_PAUSE );
 
 	if (input_up ) {
-		menu_position--;
-		if (menu_position <= 0) {
-			menu_position = TITLE_MENU_CHOICES;
+		if (menu_wait < 0) {
+			menu_position--;
+			if (menu_position <= 0) {
+				menu_position = TITLE_MENU_CHOICES;
+			}
+			menu_wait = 30;
 		}
 	}
 	if (input_down) {
-		menu_position++;
-		if (menu_position > TITLE_MENU_CHOICES ) {
-			menu_position = 1;
+		if (menu_wait < 0) {
+			menu_position++;
+			if (menu_position > TITLE_MENU_CHOICES ) {
+				menu_position = 1;
+			}
+			menu_wait = 30;
 		}
 	}
-	if ( input_exit ) {
-		game_end();
-	}
-	if ( input_select ) {
+if ( input_select ) {
 		switch (menu_position) {
-			case 1: {
+			case TITLE_MENU_CHOICE_CONTINUE: {
 				break;
 			}
-			case 2: {
+			case TITLE_MENU_CHOICE_NEW_GAME: {
+				room_goto_next();
 				break;
 			}
-			case 3: {
+			case TITLE_MENU_CHOICE_LOAD_GAME: {
+				break;
+			}
+			case TITLE_MENU_CHOICE_MUSIC_ROOM: {
+				break;
+			}
+			case TITLE_MENU_CHOICE_OPTIONS: {
+				break;
+			}
+			case TITLE_MENU_CHOICE_EXIT_GAME: {
+				game_end();
 				break;
 			}
 			default: {
@@ -53,7 +67,11 @@ if (title_mode == TITLE_MODE_MENU_READY ) {
 			}
 		}
 	}
-	
 }
+
+
+
+
+
 
 

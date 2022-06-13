@@ -1105,8 +1105,8 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "sunflowers-in-the-rain",
-    "path": "sunflowers-in-the-rain.yyp",
+    "name": "fonts",
+    "path": "folders/fonts.yy",
   },
   "resourceVersion": "1.0",
   "name": "fn_textlarge",
