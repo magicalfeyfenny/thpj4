@@ -74,9 +74,9 @@
 	//player	
 	#macro SPAWN_X 60
 	#macro SPAWN_Y 180
-	#macro FOCUS_SPEED 2
-	#macro UNFOC_SPEED 4
-	#macro SHOT_SPEED 6
+	#macro FOCUS_SPEED 3
+	#macro UNFOC_SPEED 6
+	#macro SHOT_SPEED 8
 	
 	#macro SHOT_DELAY 5
 	#macro SHOT_PLAYER_DAMAGE 5
@@ -89,6 +89,13 @@
 	#macro BOSS_CHARGE_TIME 120
 	#macro BOSS_APPROACH_TIME 30
 	
+	//cutscene
+	#macro CUTSCENE_NOSCENE 0
+	#macro CUTSCENE_OPENING 1
+	#macro CUTSCENE_MIDBOSS 2
+	#macro CUTSCENE_BOSS 3
+	#macro CUTSCENE_ENDING 4
+	
 	//effects
 	#macro PART_CHERRY_FOUNTAIN 0
 	#macro EMIT_CHERRYRAIN 0
@@ -100,5 +107,7 @@ function scr_initialize() {
 	scr_options_init();
 	scr_input_init();
 	scr_scores( SCORE_INIT );
+	global.cutscene_mode = false;
+	global.cutscene_number = CUTSCENE_NOSCENE;
 	//scr_particles_init();
 }

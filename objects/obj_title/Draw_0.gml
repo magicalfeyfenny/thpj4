@@ -2,29 +2,29 @@ switch ( title_mode ) {
 	case TITLE_MODE_START_FADEIN: {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, ( 100 - title_switch_timer ) / 100 );
-		draw_text_ext_transformed_color(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, ( 100 - title_switch_timer ) / 100 );
+		scr_draw_text_ext_transformed_color_border(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, ( 100 - title_switch_timer ) / 100, 1, c_maroon );
+		scr_draw_text_ext_transformed_color_border(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, ( 100 - title_switch_timer ) / 100, 1, c_navy );
 		draw_set_font(fn_cursive);
-		draw_text_ext_transformed_color(360, 140, "in the",	15, 1000, 1, 1, 0, c_white, c_white, c_white, c_white, ( 100 - title_switch_timer ) / 100 );
+		scr_draw_text_ext_transformed_color_border(360, 140, "in the",	15, 1000, 1, 1, 0, c_white, c_white, c_white, c_white, ( 100 - title_switch_timer ) / 100, 1, c_black );
 		break;
 	}
 	case TITLE_MODE_START_READY: {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, 1 );
-		draw_text_ext_transformed_color(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, 1 );
+		scr_draw_text_ext_transformed_color_border(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, 1, 1, c_maroon );
+		scr_draw_text_ext_transformed_color_border(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy  );
 		draw_set_font(fn_cursive);
-		draw_text_ext_transformed_color(360, 140, "in the",	15, 1000, 1, 1, 0, c_silver, c_silver, c_white, c_white, 1 );
+		scr_draw_text_ext_transformed_color_border(360, 140, "in the",	15, 1000, 1, 1, 0, c_silver, c_silver, c_white, c_white, 1, 1, c_black );
 		draw_text_color(320, 250, "~~press any key~~", c_white, c_white, c_white, c_white, dsin(abs(title_switch_timer) * 2) );
 		break;
 	}
 	case TITLE_MODE_MENU_FADEIN: {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(190 - (100 - (2 * title_switch_timer)), 100 + (50 - (1 * title_switch_timer)), "Sunflowers", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_yellow, c_yellow, c_orange, c_orange, 1 );
-		draw_text_ext_transformed_color(500 - (320 - (6.4 * title_switch_timer)), 200 - (60 - (1.2 * title_switch_timer)), "Rain", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_dkgray, c_dkgray, c_silver, c_silver, 1 );
+		scr_draw_text_ext_transformed_color_border(190 - (100 - (2 * title_switch_timer)), 100 + (50 - (1 * title_switch_timer)), "Sunflowers", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_yellow, c_yellow, c_orange, c_orange, 1, 1, c_maroon );
+		scr_draw_text_ext_transformed_color_border(500 - (320 - (6.4 * title_switch_timer)), 200 - (60 - (1.2 * title_switch_timer)), "Rain", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy );
 		draw_set_font(fn_cursive);
-		draw_text_ext_transformed_color(360 - (210 - (4.2 * title_switch_timer)), 140 + (100 - (2 * title_switch_timer)), "in the", 15, 1000, 1, 1, 2225 - (44.5 * title_switch_timer), c_silver, c_silver, c_white, c_white, 1 );
+		scr_draw_text_ext_transformed_color_border(360 - (210 - (4.2 * title_switch_timer)), 140 + (100 - (2 * title_switch_timer)), "in the", 15, 1000, 1, 1, 2225 - (44.5 * title_switch_timer), c_silver, c_silver, c_white, c_white, 1, 1, c_black );
 		draw_set_color(c_white);
 		draw_set_alpha(.20 * ((100 - (2 * title_switch_timer)) / 100));
 		draw_triangle(641,	-400,	641,	760,	640 - (350 - (7 * title_switch_timer)),	370,	false);
@@ -50,10 +50,10 @@ switch ( title_mode ) {
 	case TITLE_MODE_MENU_READY: {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(90, 150, "Sunflowers", 15, 1000, 1, 1, 65, c_yellow, c_yellow, c_orange, c_orange, 1 );
-		draw_text_ext_transformed_color(180, 140, "Rain", 15, 1000, 1, 1, 65, c_dkgray, c_dkgray, c_silver, c_silver, 1 );
+		scr_draw_text_ext_transformed_color_border(90, 150, "Sunflowers", 15, 1000, 1, 1, 65, c_yellow, c_yellow, c_orange, c_orange, 1, 1, c_maroon );
+		scr_draw_text_ext_transformed_color_border(180, 140, "Rain", 15, 1000, 1, 1, 65, c_dkgray, c_dkgray, c_silver, c_silver, 1,1,  c_navy );
 		draw_set_font(fn_cursive);
-		draw_text_ext_transformed_color(150, 240, "in the", 15, 1000, 1, 1, 65, c_silver, c_silver, c_white, c_white, 1 );
+		scr_draw_text_ext_transformed_color_border(150, 240, "in the", 15, 1000, 1, 1, 65, c_silver, c_silver, c_white, c_white, 1, 1, c_black );
 		draw_set_color(c_white);
 		draw_set_alpha(.20);
 		draw_triangle(641, -400, 641, 760, 290, 370, false);
@@ -81,6 +81,13 @@ switch ( title_mode ) {
 		break;
 	}
 }
+
+
+
+
+
+
+
 
 
 

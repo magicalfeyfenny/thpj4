@@ -106,8 +106,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "objects",
-    "path": "folders/objects.yy",
+    "name": "actors",
+    "path": "folders/actors.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_overworld_marisa",

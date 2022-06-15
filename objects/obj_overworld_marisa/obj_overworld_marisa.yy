@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "objects",
-    "path": "folders/objects.yy",
+    "name": "actors",
+    "path": "folders/actors.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_overworld_marisa",
