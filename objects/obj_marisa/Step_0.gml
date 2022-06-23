@@ -14,7 +14,10 @@ if (left && right ) {
 	right = false;
 }
 
-image_index = direction / 45;
+image_index = (direction + 22.5) / 45;
+if (direction + 22.5 >= 360 ) {
+	image_index = 0;
+}
 if (!global.cutscene_mode) {
 	if ( up || down || left || right ) {
 		move = true;
@@ -90,6 +93,22 @@ if (!global.cutscene_mode) {
 	}
 }
 
+if ( !move ) {
+	target_speed = 0;
+	if ( dspeed > target_speed ) {
+		dspeed -= 1;
+	} else {
+		dspeed = target_speed;
+	}
+}
+
+if (!place_meeting( x + lengthdir_x( dspeed, direction ), y, obj_wall ) ) {
+	x += lengthdir_x( dspeed, direction );
+}
+if (!place_meeting( x, y + lengthdir_y( dspeed, direction ), obj_wall ) ) {
+	y += lengthdir_y( dspeed, direction );
+}
+
 if ( global.cutscene_mode ) {
 	switch (global.cutscene_number) {
 		case CUTSCENE_OPENING: {
@@ -116,35 +135,26 @@ if ( global.cutscene_mode ) {
 			}
 			break;
 		}
+		case CUTSCENE_MIDBOSS: {
+			if (cutscene_mover) {
+				move_towards_point( 2272, 928, 2 );
+				if (x > 2271 && x < 2273 && y > 927 && y < 929 ) {
+					cutscene_mover = false;
+					speed = 0;
+					direction = 90;
+				}
+			}
+			break;
+		}
+		case CUTSCENE_BOSS: {
+			break;
+		}
+		case CUTSCENE_FINAL: {
+			break;
+		}
 		default: {
 			break;
 		}
 	}
 }
-
-
-
-
-if ( !move ) {
-	target_speed = 0;
-	if ( dspeed > target_speed ) {
-		dspeed -= 1;
-	} else {
-		dspeed = target_speed;
-	}
-}
-
-if (!place_meeting( x + lengthdir_x( dspeed, direction ), y, obj_wall ) ) {
-	x += lengthdir_x( dspeed, direction );
-}
-if (!place_meeting( x, y + lengthdir_y( dspeed, direction ), obj_wall ) ) {
-	y += lengthdir_y( dspeed, direction );
-}
-
-
-
-
-
-
-
 
