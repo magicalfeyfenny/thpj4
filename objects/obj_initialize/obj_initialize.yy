@@ -1,7 +1,10 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_controller",
+    "path": "sprites/spr_controller/spr_controller.yy",
+  },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -24,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "sunflowers-in-the-rain",
-    "path": "sunflowers-in-the-rain.yyp",
+    "name": "initialize",
+    "path": "folders/scripts/initialize.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_initialize",

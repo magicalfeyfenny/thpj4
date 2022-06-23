@@ -1,4 +1,4 @@
-/// @function:							scr_dialogue_start( _filename );
+	/// @function:							scr_dialogue_start( _filename );
 /// @param	{string}	_filename		The filename of the dialogue branch
 
 // Requirements: An instance of obj_dialogue
@@ -16,6 +16,14 @@ function scr_dialogue_start( _filename ) {
 	actor_right_emote	{int}		emote_test
 	actor_right			{string}	name_test
 	texttarget			{string}	text_test
+	
+	emotes are as follows:
+		#macro EMOTE_NEUTRAL	0		spr_<name>_0_neutral
+		#macro EMOTE_HAPPY		1		spr_<name>_1_happy
+		#macro EMOTE_SAD		2		spr_<name>_2_sad
+		#macro EMOTE_CONFUSED	3		spr_<name>_3_confused
+		#macro EMOTE_ANGRY		4		spr_<name>_4_angry
+		#macro EMOTE_OUCH		5		spr_<name>_5_ouch
 	
 	repeat until EOF. # acts as a newline delimiter
 */	
@@ -49,7 +57,7 @@ function scr_dialogue_start( _filename ) {
 	file_text_close( file );
 		
 	//enter dialogue mode and set variables
-	obj_dialogue.dialogue_mode = true;
+	global.dialogue_mode = true;
 	obj_dialogue.textspew = "";
 	obj_dialogue.texttarget = "";
 	obj_dialogue.textload = "";

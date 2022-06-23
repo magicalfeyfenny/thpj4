@@ -3,7 +3,7 @@ switch ( title_mode ) {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
 		scr_draw_text_ext_transformed_color_border(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, ( 100 - title_switch_timer ) / 100, 1, c_maroon );
-		scr_draw_text_ext_transformed_color_border(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, ( 100 - title_switch_timer ) / 100, 1, c_navy );
+		scr_draw_text_ext_transformed_color_border(460, 160, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, ( 100 - title_switch_timer ) / 100, 1, c_navy );
 		draw_set_font(fn_cursive);
 		scr_draw_text_ext_transformed_color_border(360, 140, "in the",	15, 1000, 1, 1, 0, c_white, c_white, c_white, c_white, ( 100 - title_switch_timer ) / 100, 1, c_black );
 		break;
@@ -12,7 +12,7 @@ switch ( title_mode ) {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
 		scr_draw_text_ext_transformed_color_border(190, 100, "Sunflowers",	15, 1000, 1, 1, 25, c_yellow, c_yellow, c_orange, c_orange, 1, 1, c_maroon );
-		scr_draw_text_ext_transformed_color_border(500, 200, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy  );
+		scr_draw_text_ext_transformed_color_border(460, 160, "Rain",	15, 1000, 1, 1, 25, c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy  );
 		draw_set_font(fn_cursive);
 		scr_draw_text_ext_transformed_color_border(360, 140, "in the",	15, 1000, 1, 1, 0, c_silver, c_silver, c_white, c_white, 1, 1, c_black );
 		draw_text_color(320, 250, "~~press any key~~", c_white, c_white, c_white, c_white, dsin(abs(title_switch_timer) * 2) );
@@ -22,7 +22,7 @@ switch ( title_mode ) {
 		draw_set_font (fn_cursivelarge);
 		draw_set_halign(fa_center);
 		scr_draw_text_ext_transformed_color_border(190 - (100 - (2 * title_switch_timer)), 100 + (50 - (1 * title_switch_timer)), "Sunflowers", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_yellow, c_yellow, c_orange, c_orange, 1, 1, c_maroon );
-		scr_draw_text_ext_transformed_color_border(500 - (320 - (6.4 * title_switch_timer)), 200 - (60 - (1.2 * title_switch_timer)), "Rain", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy );
+		scr_draw_text_ext_transformed_color_border(460 - (280 - (5.6 * title_switch_timer)), 160 - (20 - (0.4 * title_switch_timer)), "Rain", 15, 1000, 1, 1, 25 + (760 - (13.2 * title_switch_timer)), c_dkgray, c_dkgray, c_silver, c_silver, 1, 1, c_navy );
 		draw_set_font(fn_cursive);
 		scr_draw_text_ext_transformed_color_border(360 - (210 - (4.2 * title_switch_timer)), 140 + (100 - (2 * title_switch_timer)), "in the", 15, 1000, 1, 1, 2225 - (44.5 * title_switch_timer), c_silver, c_silver, c_white, c_white, 1, 1, c_black );
 		draw_set_color(c_white);
@@ -81,6 +81,7 @@ switch ( title_mode ) {
 		break;
 	}
 }
+
 
 
 

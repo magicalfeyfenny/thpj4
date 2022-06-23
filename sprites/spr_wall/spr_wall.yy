@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "terrain",
-    "path": "folders/terrain.yy",
+    "name": "mapping",
+    "path": "folders/mapping.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_wall",

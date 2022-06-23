@@ -82,23 +82,18 @@
 	#macro SHOT_PLAYER_DAMAGE 5
 	#macro SHOT_PLAYER_SPEED 8
 	
-	#macro MODE_APPROACH 0
-	#macro MODE_CHAT 1
-	#macro MODE_CHARGE 2
-	#macro MODE_ACTIVE 3
-	#macro BOSS_CHARGE_TIME 120
-	#macro BOSS_APPROACH_TIME 30
+	#macro PLAYER_POWERUP_NORMAL 0
+	#macro PLAYER_POWERUP_FLAMES 1
+	#macro PLAYER_POWERUP_LASER 2
+	#macro PLAYER_POWERUP_MISSILE 3
+	
 	
 	//cutscene
 	#macro CUTSCENE_NOSCENE 0
 	#macro CUTSCENE_OPENING 1
 	#macro CUTSCENE_MIDBOSS 2
 	#macro CUTSCENE_BOSS 3
-	#macro CUTSCENE_ENDING 4
-	
-	//effects
-	#macro PART_CHERRY_FOUNTAIN 0
-	#macro EMIT_CHERRYRAIN 0
+	#macro CUTSCENE_FINAL 4
 	
 #endregion
 
@@ -109,5 +104,7 @@ function scr_initialize() {
 	scr_scores( SCORE_INIT );
 	global.cutscene_mode = false;
 	global.cutscene_number = CUTSCENE_NOSCENE;
+	global.dialogue_mode = false;
+	global.combat_mode = false;
 	//scr_particles_init();
 }
