@@ -64,7 +64,7 @@ if (global.dialogue_mode) {
 	
 	if (text_advance_ready == TEXT_TYPING ) {
 		textspew += string_char_at(texttarget, spewlength);
-		//audio_play_sound( snd_typewriter, 0, false );
+		audio_play_sound( snd_typewriter, 0, false );
 		spewlength++;
 		if (keyboard_check_pressed(ord("Z"))) {
 //		if ( scr_input_get(INPUT_SHOT_LEFT) || scr_input_get(INPUT_SHOT_RIGHT) ) {
@@ -87,6 +87,7 @@ if (global.dialogue_mode) {
 	}
 	
 }
+
 
 
 

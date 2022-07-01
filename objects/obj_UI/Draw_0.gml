@@ -22,29 +22,27 @@ if (!global.cutscene_mode) {
 		}
 	}
 	
-	draw_set_font(fn_cursive);
+	draw_set_font(fn_dialogue_names);
 	draw_set_color(c_white);
-	draw_text( dx+360, dy+10, "Score: " );
-	draw_text( dx+360, dy+25, "Shot: " );
+	draw_text( dx+370, dy+18, "Shot: " );
 	
 	if (instance_exists(obj_marisa) ) {
 		draw_set_halign(fa_right);
-		draw_text( dx+625, dy+13, obj_marisa.point);
 		switch (obj_marisa.powerup) {
 			case PLAYER_POWERUP_NORMAL: {
-				draw_text( dx+625, dy+33, "NORMAL");
+				draw_text( dx+615, dy+18, "NORMAL");
 				break;
 			}
 			case PLAYER_POWERUP_FLAMES: {
-				draw_text( dx+625, dy+33, "F. THROWER " + string(obj_marisa.powerup_ammo));
+				draw_text( dx+615, dy+18, "F. THROWER " + string(obj_marisa.powerup_ammo));
 				break;
 			}
 			case PLAYER_POWERUP_LASER: {
-				draw_text( dx+625, dy+33, "ILLUSION L. " + string(obj_marisa.powerup_ammo));
+				draw_text( dx+615, dy+18, "ILLUSION L. " + string(obj_marisa.powerup_ammo));
 				break;
 			}
 			case PLAYER_POWERUP_MISSILE: {
-				draw_text( dx+625, dy+33, "M. MISSILE " + string(obj_marisa.powerup_ammo));
+				draw_text( dx+615, dy+18, "M. MISSILE " + string(obj_marisa.powerup_ammo));
 				break;
 			}
 			default: {
@@ -54,3 +52,4 @@ if (!global.cutscene_mode) {
 		draw_set_halign(fa_left);
 	}
 }
+

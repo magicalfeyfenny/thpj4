@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_cutscene",
-    "path": "sprites/spr_cutscene/spr_cutscene.yy",
+    "name": "spr_boss_yuuka",
+    "path": "sprites/spr_boss_yuuka/spr_boss_yuuka.yy",
   },
   "solid": false,
   "visible": true,

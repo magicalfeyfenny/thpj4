@@ -39,12 +39,12 @@ switch ( title_mode ) {
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_NEW_GAME	), 90 + (30 * TITLE_MENU_CHOICE_NEW_GAME	),	TITLE_MENU_TEXT_NEW_GAME	);	//2
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_EXIT_GAME	), 90 + (30 * TITLE_MENU_CHOICE_EXIT_GAME	),	TITLE_MENU_TEXT_EXIT_GAME	);	//6
 		//unimplemented menu functions:
-		draw_set_color(c_gray);
+/*		draw_set_color(c_gray);
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_CONTINUE	), 90 + (30 * TITLE_MENU_CHOICE_CONTINUE	),	TITLE_MENU_TEXT_CONTINUE	);	//1
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_LOAD_GAME	), 90 + (30 * TITLE_MENU_CHOICE_LOAD_GAME	),	TITLE_MENU_TEXT_LOAD_GAME	);	//3
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_MUSIC_ROOM	), 90 + (30 * TITLE_MENU_CHOICE_MUSIC_ROOM	),	TITLE_MENU_TEXT_MUSIC_ROOM	);	//4
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_OPTIONS		), 90 + (30 * TITLE_MENU_CHOICE_OPTIONS		),	TITLE_MENU_TEXT_OPTIONS		);	//5
-		draw_set_color(c_white);
+*/		draw_set_color(c_white);
 		break;
 	}
 	case TITLE_MODE_MENU_READY: {
@@ -69,18 +69,22 @@ switch ( title_mode ) {
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_NEW_GAME	), 90 + (30 * TITLE_MENU_CHOICE_NEW_GAME	),	TITLE_MENU_TEXT_NEW_GAME	);	//2
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_EXIT_GAME	), 90 + (30 * TITLE_MENU_CHOICE_EXIT_GAME	),	TITLE_MENU_TEXT_EXIT_GAME	);	//6
 		//unimplemented menu functions:
-		draw_set_color(c_gray);
+/*		draw_set_color(c_gray);
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_CONTINUE	), 90 + (30 * TITLE_MENU_CHOICE_CONTINUE	),	TITLE_MENU_TEXT_CONTINUE	);	//1
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_LOAD_GAME	), 90 + (30 * TITLE_MENU_CHOICE_LOAD_GAME	),	TITLE_MENU_TEXT_LOAD_GAME	);	//3
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_MUSIC_ROOM	), 90 + (30 * TITLE_MENU_CHOICE_MUSIC_ROOM	),	TITLE_MENU_TEXT_MUSIC_ROOM	);	//4
 		draw_text( 580 + (3 * TITLE_MENU_CHOICE_OPTIONS		), 90 + (30 * TITLE_MENU_CHOICE_OPTIONS		),	TITLE_MENU_TEXT_OPTIONS		);	//5
-		draw_set_color(c_white);
+*/		draw_set_color(c_white);
 		break;
 	}
 	default: {
 		break;
 	}
 }
+
+
+
+
 
 
 

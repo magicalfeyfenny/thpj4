@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "sunflowers-in-the-rain",
-    "path": "sunflowers-in-the-rain.yyp",
+    "name": "actors",
+    "path": "folders/actors.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_yuuka_shadow_afterimage",

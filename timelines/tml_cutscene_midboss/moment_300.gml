@@ -1,0 +1,1 @@
+scr_dialogue_start( "cutscene_midboss_3.txt" );

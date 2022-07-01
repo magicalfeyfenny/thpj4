@@ -42,20 +42,8 @@ if (title_mode == TITLE_MODE_MENU_READY ) {
 	}
 if ( input_select ) {
 		switch (menu_position) {
-			case TITLE_MENU_CHOICE_CONTINUE: {
-				break;
-			}
 			case TITLE_MENU_CHOICE_NEW_GAME: {
 				room_goto_next();
-				break;
-			}
-			case TITLE_MENU_CHOICE_LOAD_GAME: {
-				break;
-			}
-			case TITLE_MENU_CHOICE_MUSIC_ROOM: {
-				break;
-			}
-			case TITLE_MENU_CHOICE_OPTIONS: {
 				break;
 			}
 			case TITLE_MENU_CHOICE_EXIT_GAME: {
@@ -68,6 +56,10 @@ if ( input_select ) {
 		}
 	}
 }
+
+
+
+
 
 
 

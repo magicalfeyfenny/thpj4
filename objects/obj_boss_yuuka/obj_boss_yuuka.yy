@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_enemy_placeholder",
-    "path": "sprites/spr_enemy_placeholder/spr_enemy_placeholder.yy",
+    "name": "spr_boss_yuuka",
+    "path": "sprites/spr_boss_yuuka/spr_boss_yuuka.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,6 +25,9 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

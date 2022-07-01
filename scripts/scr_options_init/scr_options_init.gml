@@ -8,7 +8,7 @@ function scr_options_init(){
 	
 	//initialize default values for options
 	global.options[? OPTIONS_INPUT_TYPE] = "keyboard";
-	global.options[? OPTIONS_FULLSCREEN] = false;
+	global.options[? OPTIONS_FULLSCREEN] = true;
 	global.options[? OPTIONS_WINDOWMULT] = VIEW_MULTIPLY_720;	//default to 1280x720 for non-fullscreen
 	if ( display_get_height() >= 2160 && display_get_width() >=	3840) {						//attempt to adjust to common display resolutions
 		global.options[? OPTIONS_FULLMULT] = VIEW_MULTIPLY_2160;

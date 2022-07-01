@@ -1,0 +1,1 @@
+instance_create_layer( 2100, 2200, "lyr_ground", obj_enemy_shooter );

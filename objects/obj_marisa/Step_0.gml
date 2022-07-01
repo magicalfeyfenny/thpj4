@@ -19,7 +19,7 @@ if (direction + 22.5 >= 360 ) {
 	image_index = 0;
 }
 if (!global.cutscene_mode) {
-	if ( up || down || left || right ) {
+	if (( up || down || left || right ) && invuln < 75) {
 		move = true;
 		target_speed = UNFOC_SPEED;
 		if ( left ) {
@@ -59,6 +59,7 @@ if (!global.cutscene_mode) {
 	
 	if ( shoot ) {
 		delayer++;
+		cycler++;
 		shot_direction = target_direction;
 		if ( hold ) {
 			if (held_shot_direction == -1 ) {
@@ -72,16 +73,87 @@ if (!global.cutscene_mode) {
 			held_shot_direction = -1;
 			target_speed = UNFOC_SPEED;
 		}
-		if (delayer >= SHOT_DELAY ) {
-			aim = -5 + random(10);
-			var shot = instance_create_layer( x, y, "lyr_ground", obj_marisa_shot );
-			with (shot) {
-				direction = other.shot_direction - other.aim;
-				speed = SHOT_PLAYER_SPEED;
+		switch ( powerup ) {
+			case PLAYER_POWERUP_NORMAL: {
+				if (delayer >= SHOT_NORMAL_DELAY ) {
+					aim = -5 + random(10);
+					audio_play_sound(snd_player_shot, 10, false);
+					var shot = instance_create_layer( x, y, "lyr_ground", obj_marisa_shot );
+					with (shot) {
+						direction = other.shot_direction + other.aim;
+						speed = SHOT_NORMAL_SPEED;
+						lifetime = SHOT_NORMAL_LIFETIME;
+					}
+					delayer = 0;
+				}
+				break;
+			}			
+			case PLAYER_POWERUP_FLAMES: {
+				if (delayer >= SHOT_FLAME_DELAY ) {
+					aim = -8 + (16 * sin(cycler));
+					if (!audio_is_playing(snd_flames)) {
+						audio_play_sound(snd_flames, 10, true);
+					}
+					var shot = instance_create_layer( x, y, "lyr_ground", obj_marisa_flame );
+					with (shot) {
+						direction = other.shot_direction + other.aim;
+						speed = SHOT_FLAME_SPEED;
+						lifetime = SHOT_FLAME_LIFETIME;
+						friction = SHOT_FLAME_FRICTION;
+					}
+					powerup_ammo--;
+					if (powerup_ammo <= 0) {
+						powerup = PLAYER_POWERUP_NORMAL;
+						powerup_ammo = 0;
+					}
+					delayer = 0;
+				}
+				break;
 			}
-			delayer = 0;
+			case PLAYER_POWERUP_LASER: {
+				if (delayer >= SHOT_LASER_DELAY ) {
+					var shot = instance_create_layer( x, y, "lyr_ground", obj_marisa_laser );
+					with (shot) {
+						lifetime = SHOT_LASER_LIFETIME;
+					}
+					powerup_ammo--;
+					if (powerup_ammo <= 0) {
+						powerup = PLAYER_POWERUP_NORMAL;
+						powerup_ammo = 0;
+					}
+					delayer = 0;
+				}
+				break;
+			}
+			case PLAYER_POWERUP_MISSILE: {
+				if (delayer >= SHOT_MISSILE_DELAY ) {
+					aim = 130 + random(100);
+					audio_play_sound(snd_player_hypershot, 10, false);	
+					var shot = instance_create_layer( x, y, "lyr_ground", obj_marisa_missile );
+					with (shot) {
+						direction = other.shot_direction + other.aim;
+						speed = SHOT_MISSILE_SPEED;
+						lifetime = SHOT_MISSILE_LIFETIME;
+					}
+					powerup_ammo--;
+					if (powerup_ammo <= 0) {
+						powerup = PLAYER_POWERUP_NORMAL;
+						powerup_ammo = 0;
+					}
+					delayer = 0;
+				}
+				break;
+			}
+			default: {
+				break;
+			}
 		}
 	}
+	if (!shoot) {
+		if ( audio_is_playing(snd_flames) ) {
+			audio_stop_sound(snd_flames);
+		}
+	}	
 	
 	
 	if ( move ) {
@@ -124,21 +196,17 @@ if ( global.cutscene_mode ) {
 				if (direction != 270) {
 					prevdir = direction;
 					direction = 270;
-					cutscene_timer = 60;
 				}
-				cutscene_timer--;
-				if (cutscene_timer < 0 ) {
-					cutscene_anim = false;
-					cutscene_timer = 0;
-					direction = prevdir;
+			if (!cutscene_anim && !cutscene_mover) {
+					direction = 0;
 				}
 			}
 			break;
 		}
 		case CUTSCENE_MIDBOSS: {
-			if (cutscene_mover) {
-				move_towards_point( 2272, 928, 2 );
-				if (x > 2271 && x < 2273 && y > 927 && y < 929 ) {
+			if (cutscene_mover) {	
+				move_towards_point( 2272, 896, 2 );
+				if (x > 2271 && x < 2273 && y > 895 && y < 897 ) {
 					cutscene_mover = false;
 					speed = 0;
 					direction = 90;
@@ -147,9 +215,45 @@ if ( global.cutscene_mode ) {
 			break;
 		}
 		case CUTSCENE_BOSS: {
+			if (cutscene_mover) {	
+				move_towards_point( 736, 768, 2.5 );
+				if (x > 734 && x < 738 && y > 766 && y < 770 ) {
+					cutscene_mover = false;
+					speed = 0;
+					direction = 90;
+				}
+			}
 			break;
 		}
 		case CUTSCENE_FINAL: {
+			if (cutscene_mover) {
+				move_towards_point( 736, 768, 2.5 );
+				if (x > 734 && x < 738 && y > 766 && y < 770 ) {
+					cutscene_mover = false;
+					speed = 0;
+					direction = 90;
+				}
+			}
+			if (cutscene_anim) {
+				spark = instance_create_layer( x, y, "lyr_ground", obj_master_spark);
+				with (spark) { 
+					direction = point_direction( x, y, obj_cutscene_final.x, obj_cutscene_final.y );
+					image_angle = direction;
+				}
+				audio_play_sound(snd_spark, 10, false);
+				cutscene_anim = false;
+			}
+			if (cutscene_anim_charge) {
+				cut_timer++;
+				if (cut_timer % 5 == 0) {
+					var angle = random(360);
+					star = instance_create_layer( x + (64 * dcos(angle)), y + (64 * dsin(angle)), "lyr_ground", obj_marisa_charge_star );
+					with (star) {
+						direction = point_direction(x, y, other.x, other.y);
+						speed = 1.5;
+					}
+				}
+			}
 			break;
 		}
 		default: {
@@ -157,4 +261,25 @@ if ( global.cutscene_mode ) {
 		}
 	}
 }
+
+invuln -= 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
