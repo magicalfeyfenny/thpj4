@@ -128,6 +128,7 @@
     {"id":{"name":"snd_boss_laugh","path":"sounds/snd_boss_laugh/snd_boss_laugh.yy",},"order":33,},
     {"id":{"name":"snd_boss_destroy","path":"sounds/snd_boss_destroy/snd_boss_destroy.yy",},"order":16,},
     {"id":{"name":"spr_noname_3_confused","path":"sprites/spr_noname_3_confused/spr_noname_3_confused.yy",},"order":3,},
+    {"id":{"name":"spr_healthbar","path":"sprites/spr_healthbar/spr_healthbar.yy",},"order":40,},
     {"id":{"name":"tml_spawnzone_C","path":"timelines/tml_spawnzone_C/tml_spawnzone_C.yy",},"order":12,},
     {"id":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"order":23,},
     {"id":{"name":"spr_menuselect","path":"sprites/spr_menuselect/spr_menuselect.yy",},"order":0,},

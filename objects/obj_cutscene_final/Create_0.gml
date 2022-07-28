@@ -4,4 +4,4 @@ if (!global.cutscene_mode) {
 	timeline_index = tml_cutscene_final;
 }
 
-
+cutscene_mover = false;

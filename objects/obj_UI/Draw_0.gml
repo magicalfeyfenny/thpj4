@@ -1,7 +1,7 @@
 draw_set_halign(fa_left);
 
-var dx = camera_get_view_x(global.camera);
-var dy = camera_get_view_y(global.camera);
+dx = camera_get_view_x(global.camera);
+dy = camera_get_view_y(global.camera);
 
 //draw_text(	5 + dx,  5 + dy, fps );draw_text( 20 + dx,300 + dy, scr_input_get( INPUT_LEFT ) );
 //draw_text( 70 + dx,300 + dy, scr_input_get( INPUT_RIGHT ) );
@@ -51,5 +51,52 @@ if (!global.cutscene_mode) {
 		}
 		draw_set_halign(fa_left);
 	}
+	
+	if (instance_exists(obj_boss_wriggle)) {
+		draw_set_color(c_black);
+		draw_set_alpha(0.7);
+		draw_rectangle(dx + 24, dy + 324, dx + 615, dy + 335, false);
+		draw_set_color(c_maroon);
+		draw_set_alpha(1);
+		draw_rectangle(dx + 24, dy + 324, dx + 24 + (591 * obj_boss_wriggle.hp / 1000), dy + 335, false);
+		draw_set_color(c_white);
+		draw_sprite(spr_healthbar, 0, dx + 320, dy + 330);
+		draw_set_font(fn_cursive);
+		draw_set_halign(fa_left);
+		draw_set_color(c_black);
+		draw_text(dx + 61, dy + 301, "Wriggle Nightbug");
+		draw_text(dx + 59, dy + 301, "Wriggle Nightbug");
+		draw_text(dx + 61, dy + 299, "Wriggle Nightbug");
+		draw_text(dx + 59, dy + 299, "Wriggle Nightbug");
+		draw_set_color(c_white);
+		draw_text(dx + 60, dy + 300, "Wriggle Nightbug");
+		//draw_text_ext_transformed_color_border(dx + 60, dy + 305, "Wriggle Nightbug", 20, 1, 1, 1, 0, c_white, c_white, c_white, c_white, 1, 1, c_black);
+	}
+	
+	if (instance_exists(obj_boss_yuuka)) {
+		draw_set_color(c_black);
+		draw_set_alpha(0.7);
+		draw_rectangle(dx + 24, dy + 324, dx + 615, dy + 335, false);
+		draw_set_color(c_maroon);
+		draw_set_alpha(1);
+		draw_rectangle(dx + 24, dy + 324, dx + 24 + (591 * obj_boss_yuuka.hp / 1500), dy + 335, false);
+		draw_set_color(c_white);
+		draw_sprite(spr_healthbar, 0, dx + 320, dy + 330);
+		draw_set_font(fn_cursive);
+		draw_set_halign(fa_left);
+		draw_set_color(c_black);
+		draw_text(dx + 61, dy + 301, "Yuuka Kazami");
+		draw_text(dx + 59, dy + 301, "Yuuka Kazami");
+		draw_text(dx + 61, dy + 299, "Yuuka Kazami");
+		draw_text(dx + 59, dy + 299, "Yuuka Kazami");
+		draw_set_color(c_white);
+		draw_text(dx + 60, dy + 300, "Yuuka Kazami");
+		//draw_text_ext_transformed_color_border(dx + 60, dy + 305, "Yuuka Kazami", 20, 1, 1, 1, 0, c_white, c_white, c_white, c_white, 1, 1, c_black);
+	}
 }
+
+
+
+
+
 

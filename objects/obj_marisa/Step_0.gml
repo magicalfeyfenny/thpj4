@@ -149,12 +149,6 @@ if (!global.cutscene_mode) {
 			}
 		}
 	}
-	if (!shoot) {
-		if ( audio_is_playing(snd_flames) ) {
-			audio_stop_sound(snd_flames);
-		}
-	}	
-	
 	
 	if ( move ) {
 		if ( dspeed < target_speed ) {
@@ -262,7 +256,16 @@ if ( global.cutscene_mode ) {
 	}
 }
 
+if (!shoot || global.cutscene_mode == true || powerup != PLAYER_POWERUP_FLAMES ) {
+		if ( audio_is_playing(snd_flames) ) {
+			audio_stop_sound(snd_flames);
+		}
+	}	
+	
+
 invuln -= 1;
+
+
 
 
 
